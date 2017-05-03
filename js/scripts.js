@@ -1,22 +1,42 @@
 $(document).ready(function() {
+//this creates an array with 5 grocery list items
 
-//the array info is the appended location
-  $("#theOne").submit(function(event) {
-    var groceries = ["item1", "item2", "item3", "item4", "item5"];
-    var sortGroceries = groceries.sort();
+//this stores the user input and turns it into a string
 
 
+//this will trigger a function when the form is submitted
+  $("form").submit(function(e) {
+    e.preventDefault();
+    //create an array with grocery list items
+    var groceries =  ["firstItem", "secondItem", "thirdItem", "fourthItem", "fifthItem"];
 
-    groceries.forEach(function(groceries) {
 
-      var userInput = $("input#" + groceries).val();
+    //take users input into a upperCase string
+         groceries.forEach(function(groceries) {
 
-      $("." + groceries).text(userInput.toUpperCase());
 
-      $("form").hide();
+          var input = $("input#" + groceries).sort().val().toUpperCase();
 
-      event.preventDefault();
 
-    });
+          console.log(groceries[]);
+            //  input = input.sort();
+            // var inputArray = input.split(" ");
+            // inputArray.sort();
+
+
+            $("ul").append("<li>" + input + "</li>", );
+            $('form').hide();
+
+
+          });
+
+
+
+    // hide in the input
+
+    //output manipulated input to an element
+    //  $('inputGroceries').text(input);
+
   });
+
 });
